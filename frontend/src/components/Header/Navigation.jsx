@@ -18,12 +18,12 @@ export default function Navigation() {
                                         after:h-0.5 after:w-full
                                         after:origin-left
                                         after:scale-x-0
-                                        after:bg-[#3C4242]
+                                        after:bg-[#FF6B6B]
                                         after:transition-transform after:duration-300
-                                        hover:text-[#3C4242] 
+                                        hover:text-[#FF6B6B]
                                         hover:after:scale-x-100 ${
                                             isActive
-                                                ? "text-[#3C4242] after:scale-x-100"
+                                                ? "text-[#FF6B6B] after:scale-x-100"
                                                 : "text-[#807D7E]"
                                         }`
                                 }
