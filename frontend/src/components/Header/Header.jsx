@@ -3,10 +3,24 @@ import Navigation from "./Navigation";
 import SearchBar from "./SearchBar";
 import Actions from "./Actions";
 import { Menu } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Header() {
     const [open, setOpen] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setOpen(false);
+        };
+
+        if (open) {
+            window.addEventListener("scroll", handleScroll);
+        }
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [open]);
 
     return (
         <header className="py-2 md:py-4">
@@ -39,7 +53,13 @@ export default function Header() {
             </div>
 
             {open && (
-                <div className="fixed top-[55px] left-0 right-0 bg-white shadow-lg z-50 lg:hidden">
+                <div
+                    className={`fixed top-[55px] left-0 right-0 bg-white shadow-lg z-50 transition-all duration-300 ease-in-out ${
+                        open
+                            ? "opacity-100 translate-y-0"
+                            : "opacity-0 -translate-y-4 pointer-events-none"
+                    } lg:hidden`}
+                >
                     <div className="max-w-7xl mx-auto px-4 py-4">
                         <div className="mb-4">
                             <SearchBar compact />
