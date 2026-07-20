@@ -4,20 +4,20 @@ export default function Actions() {
     return (
         <>
             <div>
-                <ul className="flex items-center gap-3">
+                <ul className="flex items-center gap-2 sm:gap-3">
                     <li>
-                        <button className="cursor-pointer">
-                            <Heart size={20} className="text-[#2A2F2F] hover:fill-black" />
+                        <button className="cursor-pointer p-1">
+                            <Heart className="w-6 h-6 text-[#2A2F2F] hover:fill-black" />
                         </button>
                     </li>
                     <li>
-                        <button className="cursor-pointer">
-                            <UserRound size={20} className="text-[#2A2F2F] hover:fill-black" />
+                        <button className="cursor-pointer p-1">
+                            <UserRound className="w-6 h-6 text-[#2A2F2F] hover:fill-black" />
                         </button>
                     </li>
                     <li>
-                        <button className="cursor-pointer">
-                            <ShoppingCart size={20} className="text-[#2A2F2F] hover:fill-black" />
+                        <button className="cursor-pointer p-1">
+                            <ShoppingCart className="w-6 h-6 text-[#2A2F2F] hover:fill-black" />
                         </button>
                     </li>
                 </ul>
